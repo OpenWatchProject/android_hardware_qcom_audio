@@ -21,6 +21,7 @@
 #define QCOM_AUDIO_HW_H
 
 #include <cutils/list.h>
+#include <hardware/audio_amplifier.h>
 #include <hardware/audio.h>
 #include <tinyalsa/asoundlib.h>
 #include <tinycompress/tinycompress.h>
@@ -299,6 +300,7 @@ struct audio_device {
     int (*offload_effects_start_output)(audio_io_handle_t, int);
     int (*offload_effects_stop_output)(audio_io_handle_t, int);
     struct sound_card_status snd_card_status;
+    amplifier_device_t *amp;
 };
 
 int select_devices(struct audio_device *adev,
