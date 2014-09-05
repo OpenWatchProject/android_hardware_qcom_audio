@@ -1113,6 +1113,12 @@ int platform_set_audio_device_interface(const char * device_name __unused,
     return -ENOSYS;
 }
 
+int platform_set_snd_device_name(snd_device_t snd_device __unused,
+                                 const char * name __unused)
+{
+    return -ENOSYS;
+}
+
 int platform_can_split_snd_device(snd_device_t in_snd_device __unused,
                                   int *num_devices __unused,
                                   snd_device_t *out_snd_devices __unused)
